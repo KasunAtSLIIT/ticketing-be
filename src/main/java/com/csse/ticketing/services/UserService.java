@@ -11,4 +11,11 @@ public interface UserService {
 	 * @return
 	 */
 	UserModel createUser(UserModel user);
+	
+	/**
+	 * interface for get a user by id
+	 * @param id
+	 * @return
+	 */
+	UserModel getUser(String username);
 }

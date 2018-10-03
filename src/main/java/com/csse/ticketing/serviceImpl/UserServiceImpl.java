@@ -1,5 +1,7 @@
 package com.csse.ticketing.serviceImpl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +18,23 @@ import com.csse.ticketing.services.UserService;
 public class UserServiceImpl implements UserService {
 
 	@Autowired 
-	UserRepository userRepo;
+	private UserRepository userRepo;
 	
 	/**
 	 * create user implementation
 	 */
+	@Override
 	public UserModel createUser(UserModel user){
 		return userRepo.save(user);
+	}
+	
+	/**
+	 * get user by id implementation
+	 */
+	
+	@Override
+	public UserModel getUser(final String username){
+//		 final UserModel user = userRepo.findUserModelByUsername(username);
+		 return userRepo.findUserModelByUsername(username);
 	}
 }

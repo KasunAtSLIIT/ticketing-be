@@ -10,7 +10,7 @@ public class DataNotFoundException extends UserException {
 	 private static final long serialVersionUID = -554381281953166386L;
 
 	    /**
-	     * Instantiates a new note not found exception.
+	     * Instantiates a new user not found exception.
 	     *
 	     * @param message
 	     *            

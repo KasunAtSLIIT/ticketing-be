@@ -9,10 +9,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 /**
  * 
  * @author Kasun
- *
  */
 @JsonInclude(Include.ALWAYS)
-@Document(collection = "user")
+@Document(collection = "users")
 public class UserModel {
   
 	@Id
@@ -21,6 +20,9 @@ public class UserModel {
 	private String nic;
 	private String dob;
 	private String type;
+	private String role;
+	private String username;
+	private String password;
 	
 	
 	/**
@@ -46,6 +48,13 @@ public class UserModel {
 	public void setNic(String nic) {
 		this.nic = nic;
 	}
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getDob() {
 		return dob;
 	}
@@ -58,5 +67,18 @@ public class UserModel {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	
 }
