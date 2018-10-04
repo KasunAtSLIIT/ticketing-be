@@ -3,6 +3,7 @@ package com.csse.ticketing.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,7 +43,7 @@ public class JourneyController {
 			context=new Context(new ForeignUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
 		}
-		return new ResponseEntity<JourneyModel>(journeyService.createJourney(journey),HttpStatus.OK));
+		return new ResponseEntity<JourneyModel>(journeyService.createJourney(journey),HttpStatus.OK);
 	}
 
 }

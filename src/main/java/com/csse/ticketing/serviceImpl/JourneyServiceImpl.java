@@ -26,7 +26,6 @@ public class JourneyServiceImpl implements JourneyService{
 	@Override
 	public JourneyModel createJourney(JourneyModel journey) {
 		// TODO Auto-generated method stub
-		journey.setKey(UUID.randomUUID().toString());
 		return journeyRepo.save(journey);
 	}
 
@@ -38,8 +37,9 @@ public class JourneyServiceImpl implements JourneyService{
 
 	@Override
 	public JourneyModel retriveJourney(String id) {
+		return null;
 		// TODO Auto-generated method stub
-		return journeyRepo.findOne(id);
+		
 	}
 
 	@Override
