@@ -12,7 +12,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  * 
- * CORS Filter for Note Service.
+ * CORS Filter for api
  * 
  * @author Kasun Gunathilaka
  *
