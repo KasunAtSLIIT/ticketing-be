@@ -19,35 +19,38 @@ import com.csse.ticketing.models.UserModel;
 import com.csse.ticketing.services.UserService;
 
 @RestController
-@RequestMapping(value="/users")
+@RequestMapping(value = "/users")
 public class UserController {
-	 
+
 	/**
-	 * @author Kasun
-	 * creating a new user controller method
+	 * @author Kasun creating a new user controller method
 	 */
-		@Autowired
-		UserService userService;
+	@Autowired
+	UserService userService;
+
+	@RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+	public HttpEntity<UserModel> createNote(@Validated @RequestBody final UserModel user) {
 		
-		 @RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
-		    public HttpEntity<UserModel> createNote(@Validated @RequestBody final UserModel user) {
-			 return new ResponseEntity<UserModel>(userService.createUser(user), HttpStatus.CREATED);
-		    }
-		 
-		 
-		 /**
-		  * auth service
-		  * @param login
-		  * @return
-		  */
-		 @ResponseBody
-		 @RequestMapping(path = "/login", method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
-		    public HttpEntity<UserModel> getUser(@Validated @RequestBody final LoginModel login) {
-			 UserModel user=userService.getUser(login.getUsername());
-			 if(!user.getPassword().equals(login.getPassword())){
-				 throw new DataNotFoundException("Invalid password");
-			 }
-			 return new ResponseEntity<UserModel>(userService.getUser(login.getUsername()), HttpStatus.OK);
-		    }
-	
+		return new ResponseEntity<UserModel>(userService.createUser(user), HttpStatus.CREATED);
+	}
+
+	/**
+	 * auth service
+	 * 
+	 * @param login
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(path = "/login", method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
+	public HttpEntity<UserModel> getUser(@Validated @RequestBody final LoginModel login) {
+		
+		UserModel user = userService.getUser(login.getUsername());
+		
+		if (!user.getPassword().equals(login.getPassword())) {
+			throw new DataNotFoundException("Invalid password");
+		}
+		
+		return new ResponseEntity<UserModel>(userService.getUser(login.getUsername()), HttpStatus.OK);
+	}
+
 }

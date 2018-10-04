@@ -6,4 +6,5 @@ import com.csse.ticketing.models.JourneyModel;
 
 public interface JourneyRepository extends MongoRepository<JourneyModel, String>{
 
+
 }

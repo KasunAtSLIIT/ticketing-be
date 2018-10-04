@@ -48,7 +48,6 @@ public class UserModel {
 	public void setNic(String nic) {
 		this.nic = nic;
 	}
-	
 	public String getRole() {
 		return role;
 	}
