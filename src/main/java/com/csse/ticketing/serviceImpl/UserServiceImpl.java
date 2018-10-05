@@ -37,4 +37,11 @@ public class UserServiceImpl implements UserService {
 //		 final UserModel user = userRepo.findUserModelByUsername(username);
 		 return userRepo.findUserModelByUsername(username);
 	}
+
+
+	@Override
+	public UserModel updateUser(String username,UserModel user) {
+		// TODO Auto-generated method stub
+		return userRepo.save(user);
+	}
 }

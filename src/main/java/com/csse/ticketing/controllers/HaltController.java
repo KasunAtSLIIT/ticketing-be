@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.csse.ticketing.models.HaltModel;
-import com.csse.ticketing.services.JourneyService;
+
 
 
 /**
@@ -24,11 +23,11 @@ import com.csse.ticketing.services.JourneyService;
 @RestController
 @RequestMapping(value="/haltes")
 public class HaltController {
-	@Autowired
-	JourneyService journeyService;
+	/*@Autowired
+	RouteService routeService;
 	
 	 @RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
 	    public HttpEntity<HaltModel> createHalt(@Validated @RequestBody final HaltModel halt) {
-		 return new ResponseEntity<HaltModel>(journeyService.createHalt(halt), HttpStatus.CREATED);
-	    }
+		 return new ResponseEntity<HaltModel>(routeService.createHalt(halt), HttpStatus.CREATED);
+	    }*/
 }
