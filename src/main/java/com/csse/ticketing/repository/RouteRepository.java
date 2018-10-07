@@ -6,4 +6,5 @@ import com.csse.ticketing.models.RouteModel;
 
 public interface RouteRepository extends MongoRepository<RouteModel, String> {
 
+	RouteModel findRouteModelByRouteNo(final String no);
 }

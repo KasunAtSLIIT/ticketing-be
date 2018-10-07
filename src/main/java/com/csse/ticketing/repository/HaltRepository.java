@@ -6,4 +6,5 @@ import com.csse.ticketing.models.HaltModel;
 
 public interface HaltRepository extends MongoRepository<HaltModel, String>{
 
+	public HaltModel findHaltModelByHaltNo(String haltNo);
 }

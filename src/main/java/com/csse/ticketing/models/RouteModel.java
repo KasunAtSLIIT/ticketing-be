@@ -16,10 +16,12 @@ public class RouteModel {
 
 	@Id
 	private String id;
-	private String startTime;
-	private String endTime;
-	private double totalFare;
-	private String accountId;
+	private String routeNo;
+	private String name;
+	private String distance;
+	private double fare;
+	private String startPoint;
+	private String endPoint;
 	
 	/**
 	 * constructor
@@ -29,49 +31,77 @@ public class RouteModel {
 	 * @param totalFare
 	 * @param accountId
 	 */
-	public RouteModel(String id, String startTime, String endTime, double totalFare, String accountId) {
+	public RouteModel(String id, String routeNo, String name, String distance, double fare, String startPoint,
+			String endPoint) {
 		super();
 		this.id = id;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.totalFare = totalFare;
-		this.accountId = accountId;
+		this.routeNo = routeNo;
+		this.name = name;
+		this.distance = distance;
+		this.fare = fare;
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
 	}
-	
+
 	/**
 	 * getters & setters
 	 * @return
 	 */
+	
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-	public String getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-	public double getTotalFare() {
-		return totalFare;
-	}
-	public void setTotalFare(double totalFare) {
-		this.totalFare = totalFare;
-	}
-	public String getAccountId() {
-		return accountId;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDistance() {
+		return distance;
+	}
+	public String getRouteNo() {
+		return routeNo;
+	}
+
+	public void setRouteNo(String routeNo) {
+		this.routeNo = routeNo;
+	}
+
+	public void setDistance(String distance) {
+		this.distance = distance;
+	}
+
+	public double getFare() {
+		return fare;
+	}
+
+	public void setFare(double fare) {
+		this.fare = fare;
+	}
+
+	public String getStartPoint() {
+		return startPoint;
+	}
+
+	public void setStartPoint(String startPoint) {
+		this.startPoint = startPoint;
+	}
+
+	public String getEndPoint() {
+		return endPoint;
+	}
+
+	public void setEndPoint(String endPoint) {
+		this.endPoint = endPoint;
 	}
 	
 	
