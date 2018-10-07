@@ -1,23 +1,22 @@
 package com.csse.ticketing.serviceImpl;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.csse.ticketing.exceptions.DataNotFoundException;
 import com.csse.ticketing.models.HaltModel;
 import com.csse.ticketing.models.RouteModel;
 import com.csse.ticketing.repository.HaltRepository;
 import com.csse.ticketing.repository.RouteRepository;
-import java.util.List;
 import com.csse.ticketing.models.JourneyModel;
 import com.csse.ticketing.repository.JourneyRepository;
 import com.csse.ticketing.services.JourneyService;
 
 /**
- * 
  * @author Kasun
  *
  */
+
 @Service
 public class JourneyServiceImpl implements JourneyService{
    
@@ -128,6 +127,7 @@ public class JourneyServiceImpl implements JourneyService{
 	       
 	       routeRepo.deleteById(routeId);
 	}
+
 	
 	/**
 	 * @author Charuni
@@ -155,7 +155,7 @@ public class JourneyServiceImpl implements JourneyService{
 	}
 
 	@Override
-	public List<JourneyModel> listJourney(String user) {
+	public List<JourneyModel> listJourney() {
 		// TODO Auto-generated method stub
 		return journeyRepo.findAll();
 	}

@@ -18,4 +18,12 @@ public interface UserService {
 	 * @return
 	 */
 	UserModel getUser(String username);
+	
+	/**
+	 * 
+	 * @param username
+	 * @return
+	 */
+	UserModel updateUser(String username,UserModel user);
+
 }

@@ -16,6 +16,7 @@ import com.csse.ticketing.exceptions.BadRequestException;
 import com.csse.ticketing.models.RouteModel;
 import com.csse.ticketing.services.JourneyService;
 
+
 /**
  * 
  * @author Kasun
@@ -24,10 +25,9 @@ import com.csse.ticketing.services.JourneyService;
 @RestController
 @RequestMapping(value="/routes")
 public class RouteController {
-
+	
 	@Autowired
 	JourneyService journeyService;
-	
 	/**
 	 * service caller for create a new route
 	 * @param route
@@ -83,4 +83,6 @@ public class RouteController {
 
 	        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	    }
+
+		
 }

@@ -1,5 +1,7 @@
 package com.csse.ticketing.models;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,7 +25,8 @@ public class UserModel {
 	private String role;
 	private String username;
 	private String password;
-	
+	private double balance;
+	private Date regDate;
 	
 	/**
 	 * getters & setters
@@ -35,7 +38,6 @@ public class UserModel {
 	public void setKey(String key) {
 		this.key = key;
 	}
-	
 	public String getName() {
 		return name;
 	}
@@ -78,6 +80,17 @@ public class UserModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
 	
 }

@@ -1,6 +1,5 @@
 package com.csse.ticketing.models;
 
-
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -15,11 +14,11 @@ public class JourneyModel {
 	private String startPoint;
 	private double startPoint_lat;
 	private double startPoint_long;
-	private Date start_time;
+	private String start_time;
 	private String endPoint;
 	private double endPoint_lat;
 	private double endPoint_long;
-	private Date end_time;
+	private String end_time;
 	private double distance;
 	private double fare;
 	
@@ -53,12 +52,6 @@ public class JourneyModel {
 	public void setStartPoint_long(double startPoint_long) {
 		this.startPoint_long = startPoint_long;
 	}
-	public Date getStart_time() {
-		return start_time;
-	}
-	public void setStart_time(Date start_time) {
-		this.start_time = start_time;
-	}
 	public String getEndPoint() {
 		return endPoint;
 	}
@@ -77,12 +70,6 @@ public class JourneyModel {
 	public void setEndPoint_long(double endPoint_long) {
 		this.endPoint_long = endPoint_long;
 	}
-	public Date getEnd_time() {
-		return end_time;
-	}
-	public void setEnd_time(Date end_time) {
-		this.end_time = end_time;
-	}
 	public double getDistance() {
 		return distance;
 	}
@@ -95,23 +82,20 @@ public class JourneyModel {
 	public void setFare(double fare) {
 		this.fare = fare;
 	}
-	
-	public JourneyModel(String key, String user, String startPoint, double startPoint_lat, double startPoint_long,
-			Date start_time) {
-		super();
-		this.key = key;
-		this.user = user;
-		this.startPoint = startPoint;
-		this.startPoint_lat = startPoint_lat;
-		this.startPoint_long = startPoint_long;
+	public String getStart_time() {
+		return start_time;
+	}
+	public void setStart_time(String start_time) {
 		this.start_time = start_time;
 	}
-	
-	public JourneyModel() {
-		super();
-		
+	public String getEnd_time() {
+		return end_time;
 	}
-
+	public void setEnd_time(String end_time) {
+		this.end_time = end_time;
+	}
+	
+	
 	
 	
 	

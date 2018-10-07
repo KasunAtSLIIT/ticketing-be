@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,4 +54,26 @@ public class UserController {
 		return new ResponseEntity<UserModel>(userService.getUser(login.getUsername()), HttpStatus.OK);
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public HttpEntity<UserModel> getUserDetails(@PathVariable("id") final String id) {
+
+		return new ResponseEntity<UserModel>(userService.getUser(id), HttpStatus.OK);       
+    }
+	
+	/**
+	 * 
+	 * @param id
+	 * @param user
+	 * @return
+	 */
+	 @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	    public HttpEntity<UserModel> updateBalance(@PathVariable("id") final String id, @Validated @RequestBody final UserModel user) {
+
+			return new ResponseEntity<UserModel>(userService.updateUser(id,user), HttpStatus.OK);       
+	    }
 }

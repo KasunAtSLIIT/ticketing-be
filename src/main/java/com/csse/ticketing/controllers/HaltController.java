@@ -24,8 +24,9 @@ import com.csse.ticketing.exceptions.BadRequestException;
 @RestController
 @RequestMapping(value="/halts")
 public class HaltController {
-	@Autowired
-	JourneyService journeyService;
+	
+	    @Autowired
+	    JourneyService journeyService;
 	
 		/**
 		 * service caller for create a new halt
@@ -78,4 +79,5 @@ public class HaltController {
 	        
 	        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	    }
+
 }

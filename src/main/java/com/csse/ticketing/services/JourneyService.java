@@ -1,18 +1,10 @@
 package com.csse.ticketing.services;
 
-
-import com.csse.ticketing.models.HaltModel;
-import com.csse.ticketing.models.RouteModel;
-
-/**
- * 
- * @author Kasun
- *
- */
-
 import java.util.List;
 
+import com.csse.ticketing.models.HaltModel;
 import com.csse.ticketing.models.JourneyModel;
+import com.csse.ticketing.models.RouteModel;
 
 public interface JourneyService {
 	
@@ -42,7 +34,7 @@ public interface JourneyService {
 	 * @param user
 	 * @return
 	 */
-	public List<JourneyModel> listJourney(final String user);
+	public List<JourneyModel> listJourney();
 
 	/**
 	 * route interface
@@ -100,4 +92,8 @@ public interface JourneyService {
 	 * @return
 	 */
 	public HaltModel getHalt(final String haltNo);
+
+	
+
+
 }
