@@ -8,10 +8,11 @@ package com.csse.ticketing.models;
 public class HaltModel {
 
 	private String id;
+	private String haltNo;
 	private String name;
 	private String nextHalt;
 	private String previousHalt;
-	private String routId;
+	private String routNo;
 	
 	/**
 	 * constructor
@@ -21,13 +22,14 @@ public class HaltModel {
 	 * @param previousHalt
 	 * @param routId
 	 */
-	public HaltModel(String id, String name, String nextHalt, String previousHalt, String routId) {
+	public HaltModel(String id, String haltNo, String name, String nextHalt, String previousHalt, String routNo) {
 		super();
 		this.id = id;
+		this.haltNo = haltNo;
 		this.name = name;
 		this.nextHalt = nextHalt;
 		this.previousHalt = previousHalt;
-		this.routId = routId;
+		this.routNo = routNo;
 	}
 	
 	/**
@@ -46,6 +48,22 @@ public class HaltModel {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getHaltNo() {
+		return haltNo;
+	}
+
+	public void setHaltNo(String haltNo) {
+		this.haltNo = haltNo;
+	}
+
+	public String getRoutNo() {
+		return routNo;
+	}
+
+	public void setRoutNo(String routNo) {
+		this.routNo = routNo;
+	}
+
 	public String getNextHalt() {
 		return nextHalt;
 	}
@@ -59,10 +77,10 @@ public class HaltModel {
 		this.previousHalt = previousHalt;
 	}
 	public String getRoutId() {
-		return routId;
+		return routNo;
 	}
-	public void setRoutId(String routId) {
-		this.routId = routId;
+	public void setRoutId(String routNo) {
+		this.routNo = routNo;
 	}
 		
 	

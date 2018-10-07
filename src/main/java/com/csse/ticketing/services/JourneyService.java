@@ -44,19 +44,60 @@ public interface JourneyService {
 	 */
 	public List<JourneyModel> listJourney(final String user);
 
-	
-
 	/**
 	 * route interface
 	 * @param rout
 	 * @return
 	 */
-	RouteModel createRoute(RouteModel rout);
+	
+	public RouteModel createRoute(RouteModel rout);
+	
+	/**
+	 * update route
+	 * @param route
+	 * @return
+	 */
+	
+	public RouteModel updateRoute(RouteModel route);
+	
+	/**
+	 * delete a route
+	 * @param routeId
+	 */
+	
+	public void deleteRoute(final String routeId);
+	
+	/**
+	 * get a single route
+	 * @param route
+	 * @return
+	 */
+	public RouteModel getRoute(final String routeNo);
 	
 	/**
 	 * halt interface
 	 * @param halt
 	 * @return
 	 */
-	HaltModel createHalt(HaltModel halt);
+	public HaltModel createHalt(HaltModel halt);
+	
+	/**
+	 * update a halt
+	 * @param halt
+	 * @return
+	 */
+	public HaltModel updateHalt(HaltModel halt);
+	
+	/**
+	 * delete a halt
+	 * @param haltNo
+	 */
+	public void deleteHalt(final String haltNo);
+	
+	/**
+	 * get a single halt
+	 * @param haltNo
+	 * @return
+	 */
+	public HaltModel getHalt(final String haltNo);
 }
