@@ -1,6 +1,5 @@
 package com.csse.ticketing.models;
 
-import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,6 +20,7 @@ public class JourneyModel {
 	private String end_time;
 	private double distance;
 	private double fare;
+	private double balance;
 	
 	public String getKey() {
 		return key;
@@ -94,9 +94,10 @@ public class JourneyModel {
 	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
 	}
-	
-	
-	
-	
-	
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}	
 }
