@@ -1,5 +1,8 @@
 package com.csse.ticketing.controllers;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.csse.ticketing.models.ChildUserFareModel;
 import com.csse.ticketing.models.Context;
 import com.csse.ticketing.models.ForeignUserFareModel;
 import com.csse.ticketing.models.JourneyModel;
@@ -38,25 +42,41 @@ public class JourneyController {
 		Double distance = journey.getDistance();
 		distance=(double) Math.round(distance * 100) / 100;
 		System.out.println(user.getType());
+		
+		//calculate age
+		String[] dob = (user.getDob()).split("-");
+		int year = Integer.parseInt(dob[0]);
+		int month = Integer.parseInt(dob[1]);
+		int bdate = Integer.parseInt(dob[2]);
+		
+		LocalDate birthdate =LocalDate.of(year, month, bdate);      //Birth date
+		LocalDate now = LocalDate.of(2018,10,8);                      //Today's date
+		 
+		int age = Period.between(birthdate, now).getYears();
+		System.out.println(age);
 
 		//strategy pattern used to calculate distance
 		Context context;
 
-		/*if (user_type.equalsIgnoreCase("Local")) {
-			context=new Context(new LocalUserFareModel());
+		if (age < 19) {
+			context=new Context(new ChildUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
-		}*/
-		if (user_type.equalsIgnoreCase("Local")) {
+		}
+		
+		else if (user_type.equalsIgnoreCase("Local")) {
 			context=new Context(new LocalUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
 		}
 		
-		if (user_type.equalsIgnoreCase("Foreign")) {
+		else if (user_type.equalsIgnoreCase("Foreign")) {
 			context=new Context(new ForeignUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
 		}
 			
 		//check user balance
+		System.out.println(journey.getFare());
+		System.out.println(user.getBalance());
+
 		double balance= user.getBalance()-journey.getFare();
 		balance=(double) Math.round(balance * 100) / 100;
 		System.out.println(balance);
