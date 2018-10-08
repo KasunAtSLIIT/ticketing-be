@@ -31,18 +31,37 @@ public class JourneyController {
 	public HttpEntity<JourneyModel> createJourney(@Validated @RequestBody final JourneyModel journey) {
 
 		UserModel user = userService.getUser(journey.getUser());
+		System.out.println(user.getType());
+		String user_type = user.getType();
 		
+		//trim distance
+		Double distance = journey.getDistance();
+		distance=(double) Math.round(distance * 100) / 100;
+		System.out.println(user.getType());
+
+		//strategy pattern used to calculate distance
 		Context context;
 
-		if (user.getType().equalsIgnoreCase("local")) {
+		/*if (user_type.equalsIgnoreCase("Local")) {
+			context=new Context(new LocalUserFareModel());
+			journey.setFare(context.executeStatergy(journey));
+		}*/
+		if (user_type.equalsIgnoreCase("Local")) {
 			context=new Context(new LocalUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
 		}
 		
-		if (user.getType().equalsIgnoreCase("foreign")) {
+		if (user_type.equalsIgnoreCase("Foreign")) {
 			context=new Context(new ForeignUserFareModel());
 			journey.setFare(context.executeStatergy(journey));
 		}
+			
+		//check user balance
+		double balance= user.getBalance()-journey.getFare();
+		balance=(double) Math.round(balance * 100) / 100;
+		System.out.println(balance);
+		journey.setBalance(balance);
+
 		return new ResponseEntity<JourneyModel>(journeyService.createJourney(journey),HttpStatus.OK);
 	}
 
