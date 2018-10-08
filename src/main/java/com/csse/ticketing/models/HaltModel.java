@@ -1,12 +1,17 @@
 package com.csse.ticketing.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * 
  * @author Kasun
  *
  */
+@Document(collection = "halt")
 public class HaltModel {
 
+	@Id
 	private String id;
 	private String haltNo;
 	private String name;
