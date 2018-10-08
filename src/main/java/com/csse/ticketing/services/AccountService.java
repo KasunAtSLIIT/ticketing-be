@@ -1,5 +1,8 @@
 package com.csse.ticketing.services;
 
-public interface AccountService {
+import com.csse.ticketing.models.AccountModel;
 
+public interface AccountService {
+        
+	public AccountModel updateAccount(AccountModel account);
 }
